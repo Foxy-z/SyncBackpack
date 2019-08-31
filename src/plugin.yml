@@ -1,0 +1,6 @@
+name: SyncChest
+author: TheFoxy41
+version: 0.0.1
+main: fr.thefoxy41.syncBackpack.SyncBackpack
+commands:
+  backpack:

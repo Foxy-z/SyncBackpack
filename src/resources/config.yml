@@ -1,0 +1,8 @@
+host: localhost
+port: 3306
+user: my_user
+password: my_password
+name: my_database
+chests_table: backpack_chests
+backpacks_table: backpacks
+items_table: backpacks_items
