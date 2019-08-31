@@ -39,7 +39,12 @@ public class BackpackManager {
         UUID uuid = player.getUniqueId();
         Bukkit.getScheduler().runTaskAsynchronously(SyncBackpack.INSTANCE, () -> {
             try {
-                ResultSet results = (new Query()).from(Configuration.BACKPACKS_TABLE).select().join(Configuration.BACKPACKS_ITEMS_TABLE, Configuration.BACKPACKS_TABLE + ".id = backpack_id").where(Configuration.BACKPACKS_TABLE + ".uuid", uuid.toString()).execute();
+                ResultSet results = new Query()
+                        .from(Configuration.BACKPACKS_TABLE)
+                        .select()
+                        .join(Configuration.BACKPACKS_ITEMS_TABLE, Configuration.BACKPACKS_TABLE + ".id = backpack_id")
+                        .where(Configuration.BACKPACKS_TABLE + ".uuid", uuid.toString())
+                        .execute();
 
                 if (results.next()) {
                     results.previous();
