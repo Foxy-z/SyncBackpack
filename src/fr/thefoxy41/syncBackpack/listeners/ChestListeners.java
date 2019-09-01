@@ -36,6 +36,11 @@ public class ChestListeners implements Listener {
             return;
         }
 
+        if (!player.hasPermission("syncbackpack.open")) {
+            player.sendMessage(Messages.PREFIX + "Tu n'as pas la permission d'ouvrir ce coffre.");
+            return;
+        }
+
         if (!ChestManager.isSyncChest(block.getLocation())) return;
 
         Backpack backpack = BackpackManager.get(player.getUniqueId());

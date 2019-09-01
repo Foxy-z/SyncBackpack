@@ -36,7 +36,7 @@ public class Backpack implements InventoryHolder {
     public int getLevel() {
         int level = 1;
         for (int i = 2; i < 7; i++) {
-            if (!this.player.hasPermission("chest.level." + i)) break;
+            if (!this.player.hasPermission("syncbackpack.level." + i)) break;
             level = i;
         }
         return level;

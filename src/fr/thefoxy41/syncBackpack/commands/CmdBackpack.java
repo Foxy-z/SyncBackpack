@@ -16,8 +16,8 @@ public class CmdBackpack implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        if (!player.hasPermission("backpack.command")) {
-            player.sendMessage(Messages.PREFIX);
+        if (!player.hasPermission("syncbackpack.command")) {
+            player.sendMessage(Messages.CMD_NO_PERMISSION);
             return true;
         }
 
@@ -29,7 +29,7 @@ public class CmdBackpack implements CommandExecutor {
         String arg1 = args[0];
         String arg2 = args[1];
 
-        if (!player.hasPermission("backpack.command." + arg1.toLowerCase())) {
+        if (!player.hasPermission("syncbackpack.command." + arg1.toLowerCase())) {
             player.sendMessage(Messages.CMD_NO_PERMISSION);
             return true;
         }
