@@ -57,6 +57,7 @@ public class Backpack implements InventoryHolder {
     public Inventory getInventory() {
         Inventory inventory = Bukkit.createInventory(this, getSlots(), Messages.PREFIX + this.player.getName());
         for (int slot : this.heads.keySet()) {
+            if (slot >= inventory.getSize() -1) break;
             Head head = this.heads.get(slot);
             inventory.setItem(slot, head.getItem());
         }
